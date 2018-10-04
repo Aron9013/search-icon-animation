@@ -29,10 +29,11 @@ $pi: 3.1415926535897932384626433832795;
       //}
 
       .icon {
-        stroke-dashoffset: 0;
 
         &.active {
-          animation: drawOut 1000ms ease-in forwards;
+          stroke-dasharray: 36px;
+          stroke-dashoffset: 36px;
+          animation: drawOut 1000ms ease-in reverse backwards;
         }
       }
 
@@ -81,8 +82,7 @@ $pi: 3.1415926535897932384626433832795;
 
 @keyframes drawOut {
   100% {
-    stroke-dasharray: 36px;
-    stroke-dashoffset: 36px;
+    stroke-dashoffset: 0;
   }
 }
 
