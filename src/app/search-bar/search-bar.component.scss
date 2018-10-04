@@ -24,10 +24,17 @@ $pi: 3.1415926535897932384626433832795;
 
       .icon {
 
-        &.active {
+        &.focus {
           stroke-dasharray: 36px;
           stroke-dashoffset: 36px;
-          animation: drawOut 1000ms ease-in reverse backwards;
+          animation: drawOut 800ms ease-in reverse backwards;
+        }
+
+        &.blur {
+          stroke-dasharray: 36px;
+          stroke-dashoffset: 36px;
+          animation: drawIn 500ms ease-in forwards;
+          animation-delay: 1000ms;
         }
       }
 
@@ -65,9 +72,13 @@ $pi: 3.1415926535897932384626433832795;
         stroke-dashoffset: (23 * $pi);
         transform: rotate(44deg);
 
-        &.active {
+        &.focus {
           animation: loading 2000ms infinite;
-          animation-delay: 1000ms;
+          animation-delay: 800ms;
+        }
+
+        &.blur {
+          animation: complete 1000ms forwards;
         }
       }
     }
@@ -75,6 +86,12 @@ $pi: 3.1415926535897932384626433832795;
 }
 
 @keyframes drawOut {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawIn {
   100% {
     stroke-dashoffset: 0;
   }
@@ -91,5 +108,19 @@ $pi: 3.1415926535897932384626433832795;
   }
   100% {
     stroke-dashoffset: -(23 * $pi);
+  }
+}
+
+@keyframes complete {
+  0% {
+    stroke-dashoffset: -(23 * $pi);
+    animation-timing-function: cubic-bezier(0.64, 0, 0.11, 0.58);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    animation-timing-function: cubic-bezier(0.64, 0, 0.11, 0.58);
+  }
+  100% {
+    stroke-dashoffset: (23 * $pi);
   }
 }

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent {
-  public isActive: boolean = false;
+  public isActive: boolean;
 
   public toggleFocus(): void {
     this.isActive = !this.isActive;
