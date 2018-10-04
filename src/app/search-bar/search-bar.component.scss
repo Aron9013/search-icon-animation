@@ -1,0 +1,96 @@
+$pi: 3.1415926535897932384626433832795;
+
+.page {
+  position: relative;
+
+  .search-container {
+    height: 70px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 16px -4px rgba(0, 0, 0, 0.7);
+
+    .search-box {
+      outline: none;
+      border: none;
+      font-size: 1.2rem;
+      font-family: sans-serif;
+    }
+
+    .search-icon {
+      position: relative;
+      width: 29px;
+      height: 29px;
+      margin: 20px;
+
+      //.search-icon-full {
+      //  position: absolute;
+      //  width: 29px;
+      //  height: 29px;
+      //}
+
+      .icon {
+        stroke-dashoffset: 0;
+
+        &.active {
+          animation: drawOut 1000ms ease-in forwards;
+        }
+      }
+
+      .handle {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        height: 9px;
+        width: 9px;
+      }
+
+      .circle-top {
+        position: absolute;
+        top: 0;
+        left: 3px;
+        height: 22px;
+        width: 22px;
+      }
+
+      .circle-bottom {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        height: 22px;
+        width: 22px;
+      }
+
+      .loading-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        stroke-dasharray: (23 * $pi);
+        stroke-dashoffset: (23 * $pi);
+        transform: rotate(44deg);
+
+        &.active {
+          animation: loading 2000ms ease-in-out infinite;
+          animation-delay: 1000ms;
+        }
+      }
+    }
+  }
+}
+
+@keyframes drawOut {
+  100% {
+    stroke-dasharray: 36px;
+    stroke-dashoffset: 36px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    stroke-dashoffset: (23 * $pi);
+  }
+  100% {
+    stroke-dashoffset: -(23 * $pi);
+  }
+}
