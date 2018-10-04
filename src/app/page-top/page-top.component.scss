@@ -1,0 +1,12 @@
+.page-top {
+  position: fixed;
+  z-index: 500;
+  width: calc(100vw - 100px);
+  height: 150px;
+  background: white;
+  box-shadow: 2px 2px 16px -4px rgba(0, 0, 0, 0.4);
+
+  .header {
+    font-weight: 700;
+  }
+}

@@ -2,6 +2,9 @@ $pi: 3.1415926535897932384626433832795;
 
 .page {
   position: relative;
+  top: 150px;
+  left: 100px;
+  width: calc(100vw - 100px);
 
   .search-container {
     height: 70px;
@@ -13,7 +16,6 @@ $pi: 3.1415926535897932384626433832795;
       outline: none;
       border: none;
       font-size: 1.2rem;
-      font-family: sans-serif;
     }
 
     .search-icon {
