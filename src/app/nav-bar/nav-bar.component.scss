@@ -5,4 +5,11 @@
   height: 100vh;
   background: white;
   box-shadow: 2px 2px 16px -4px rgba(0, 0, 0, 0.7);
+
+  .fancy-bar {
+    margin-top: 150px;
+    height: 1px;
+    width: 90%;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  }
 }
