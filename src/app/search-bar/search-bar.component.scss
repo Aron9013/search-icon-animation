@@ -29,14 +29,14 @@ $pi: 3.1415926535897932384626433832795;
         &.focus {
           stroke-dasharray: 36px;
           stroke-dashoffset: 36px;
-          animation: drawOut 800ms ease-in reverse backwards;
+          animation: drawOut 500ms ease-in reverse backwards;
         }
 
         &.blur {
           stroke-dasharray: 36px;
           stroke-dashoffset: 36px;
-          animation: drawIn 500ms ease-in forwards;
-          animation-delay: 1000ms;
+          animation: drawIn 350ms ease-in forwards;
+          animation-delay: 700ms;
         }
       }
 
@@ -75,12 +75,12 @@ $pi: 3.1415926535897932384626433832795;
         transform: rotate(44deg);
 
         &.focus {
-          animation: loading 2000ms infinite;
-          animation-delay: 800ms;
+          animation: loading 1800ms infinite;
+          animation-delay: 500ms;
         }
 
         &.blur {
-          animation: complete 1000ms forwards;
+          animation: complete 700ms forwards;
         }
       }
     }
